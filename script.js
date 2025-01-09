@@ -16,6 +16,9 @@ function Generator(passwordLength, includeLowerCase, includeUpperCase, includeNu
     if (passwordLength <= 0) {
         return `(password length must be atleast 1)`;
     }
+    if (passwordLength > 20) {
+        return `(password length must be less than 20)`;
+    }
     if (allowedChars.length === 0) {
         return `(atleast one set of characters need to be selected)`;
     }
